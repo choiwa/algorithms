@@ -30,3 +30,30 @@ const loopNTimes = (n) => {
 }
 
 loopNTimes(3);
+
+function computeFactorial(num) {
+    if (num === 1) {
+        return 1;
+    }
+
+    return num * computeFactorial(num - 1);
+}
+
+computeFactorial(5);
+
+// Accumulators recursions
+function joinELements(array, joinString) {
+    function recurse(index, resultSoFar) {
+        resultSoFar += array[index];
+
+        if (index === array.length - 1) {
+            return resultSoFar;
+        }
+
+        return recurse(index + 1, resultSoFar + joinString)
+    }
+
+    return recurse(0, "");
+}
+
+joinELements(['s', 'cr', 't cod', ' :) :)'], 'e')
