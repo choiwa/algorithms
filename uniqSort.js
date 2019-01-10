@@ -11,10 +11,9 @@ const uniqSort = function(arr) {
 
         if (breadcrumbs[current] === undefined) {
             breadcrumbs[current] = current;
+            uniqArr.push(current);
         }
     }
-
-    uniqArr = Object.values(breadcrumbs);
 
     return uniqArr.sort((a,b) => a - b);
 }
