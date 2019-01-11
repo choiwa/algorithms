@@ -27,3 +27,39 @@ function binarySearch(array, target) {
 }
 
 binarySearch([2, 6, 7, 90, 103, 430, 500, 691, 1000, 5000], 500);
+
+function binarySearchIndex () {
+    let index = 0;
+
+    return recursiveBinarySearch = (array, target) => {
+        let guess = Math.floor((array.length - 1) / 2);
+    
+        if (array.length === 0) {
+            return -1;
+        }
+    
+        if (target === array[guess]) {
+            return guess + index;
+        }
+    
+        if (array[guess] < target) {
+            index += guess + 1;
+            return recursiveBinarySearch(array.slice(guess + 1, array.length), target);
+        } else {
+            return recursiveBinarySearch(array.slice(0, guess), target);
+    
+        }
+    }
+}
+
+
+
+var result = binarySearchIndex();
+result([2, 6, 7, 90, 103, 430, 500, 691, 1000, 5000], 430);
+//        [2, 6, 7, 90, 103, 430, 500, 691, 1000, 5000] // guess = 4
+// index += 4 + 1
+// 103 < 500
+//                          [430, 500, 691, 1000, 5000] guess = 2
+// 691 > 500
+// index - 2
+// [430, 500]
