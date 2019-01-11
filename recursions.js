@@ -31,6 +31,7 @@ const loopNTimes = (n) => {
 
 loopNTimes(3);
 
+// factorial recursion
 function computeFactorial(num) {
     if (num === 1) {
         return 1;
@@ -40,6 +41,50 @@ function computeFactorial(num) {
 }
 
 computeFactorial(5);
+
+// factorial memorization
+let memorize = (fn) => {
+    let cache = {};
+    // cache = {5: 5 * factorial(5 - 1),
+    //          4: 4 * factorial(4 - 1),
+    //          3: 3 * factorial(3 - 1),
+    //          2: 2 * factorial(2 - 1),
+    //          1: 1;
+    //          }
+
+    return (...args) => {
+        let currentFactorial = args[0];
+
+        if (cache[currentFactorial]) {
+            return cache[currentFactorial];
+        } else {
+            let result = fn(currentFactorial);
+
+            cache[currentFactorial] = result;
+            return result;
+        }
+    }
+}
+
+// the factorial takes 
+// 1. the parameter with n
+// 2. the memorize function
+const factorial = memorize(
+  (x) => {
+    if (x === 0) {
+      return 1;
+    }
+    else {
+      return x * factorial(x - 1);
+    }
+  }
+);
+
+
+
+console.log(factorial(5));
+
+
 
 // Accumulators recursions
 function joinELements(array, joinString) {
