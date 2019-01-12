@@ -34,3 +34,9 @@
 * divide and conquer
 * O(n log n)
 
+**makeChange.js**
+* divide and conquer
+* memorization
+* cache
+* recursion
+
