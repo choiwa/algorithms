@@ -26,4 +26,11 @@
 * object
 * Cache
 
+**bubbleSort.js**
+* naive sort
+* n^2
+
+**mergeSort.js**
+* divide and conquer
+* O(n log n)
 
