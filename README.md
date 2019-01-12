@@ -15,7 +15,7 @@
 * Cache
 * callbacks
 
-**memorizationClosureCB.js**
+**recursions.js**
 * Basic Recursion
 * factorial recursion
 * factorial memorization
