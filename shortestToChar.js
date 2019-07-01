@@ -15,5 +15,18 @@ var shortestToChar = function (S, C) {
     shortestDistance.push(distance);
   }
 
+  //     checking distance from right to left
+  //     compare the distance as the same time
+
+  for (let i = S.length - 1; i >= 0; i -= 1) {
+
+    if (shortestDistance[i] === 0) {
+      distance = 0;
+    } else {
+      distance += 1;
+      shortestDistance[i] = Math.min(distance, shortestDistance[i])
+    }
+  }
+
   return shortestDistance;
 };
