@@ -10,28 +10,27 @@
 // 1. Mergesort
 // 2. Quicksort
 
-function bubbleSort (list) {
-    let swap = false;
-    // for the length - 1 to 0
-    for (i = list.length - 1; i >= 0; i -= 1) {
-        swap = false;
-        // start from beginning of the list
-        for (j = 0; j <= i; j += 1) {
-            // compare adjacent pair
-            if (list[j] > list[j + 1]) {
-                // swap their position if they are not in the right order
-                [list[j], list[j + 1]] =  [list[j + 1], list[j]]
-                swap = true;
-            }
-            console.log(list);
-        }
-        if (swap === false) {
-            console.log('done')
-            return list;
-        }
+function bubbleSort(list) {
+  let swap = false;
+  // for the length - 1 to 0
+  // the worse case is n^2
+  for (i = list.length - 1; i >= 0; i -= 1) {
+    swap = false;
+    // start from beginning of the list
+    for (j = 0; j <= i; j += 1) {
+      // compare adjacent pair
+      if (list[j] > list[j + 1]) {
+        // swap their position if they are not in the right order
+        [list[j], list[j + 1]] = [list[j + 1], list[j]]
+        swap = true;
+      }
     }
-    
-return list;
+    if (swap === false) {
+      return list;
+    }
+  }
+
+  return list;
 }
 
 // bubbleSort([9, 2, 5, 6, 4, 3, 7, 10, 1, 8]);
