@@ -14,7 +14,7 @@ const fib = function (N) {
 };
 
 
-// aterative 
+// iterative 
 // Big O is n
 // runtime: 48 ms
 const fib = function (N) {
