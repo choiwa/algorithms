@@ -1,6 +1,5 @@
 function permute(arr) {
   let result = [];
-  let indention = '..';
 
   const permuteHelper = (arr, arrChosen = []) => {
     if (arr.length === 0) {
