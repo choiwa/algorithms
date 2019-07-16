@@ -4,16 +4,14 @@ function sumAll(arr) {
   let secondNum;
 
   if (arr[0] < arr[1]) {
-    firstNum = arr[0];
-    secondNum = arr[1];
+    [firstNum, secondNum] = arr;
   } else {
-    firstNum = arr[1];
-    secondNum = arr[0];
+    [secondNum, firstNum] = arr;
   }
 
-          for (let i = firstNum; i <= secondNum; i += 1) {
-          sum += i;
-        }
+  for (let i = firstNum; i <= secondNum; i += 1) {
+    sum += i;
+  }
 
   return sum;
 }
