@@ -1,18 +1,18 @@
 function steamrollArray(arr) {
   // I'm a steamroller, baby
-  let finalArr = [];
+  const finalArr = [];
 
   function recursion(arr) {
-    if (arr[0][0] !== undefined) {
-      recursion(arr[0][0]);
+    if (!Array.isArray(arr)) {
+      finalArr.push(arr);
+      return;
     }
-
     for (let i = 0; i < arr.length; i += 1) {
-      finalArr.push(arr[i]);
+      recursion(arr[i]);
     }
   }
 
+  recursion(arr);
+
   return finalArr;
 }
-
-steamrollArray([1, [2], [3, [[4]]]]);
