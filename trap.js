@@ -1,29 +1,26 @@
 const trap = (height) => {
-  let begin = 0;
-  let end;
+  let leftPointer = 0;
+  let rightPointer = height.length - 1;
   let count = 0;
+  let leftMax = 0;
+  let rightMax = 0;
 
-  while (begin < height.length) {
-    end = begin + 1;
-
-    if (height[begin] > height[end]) {
-      let sum = 0;
-
-      for (let i = end; i < height.length; i += 1) {
-        if (height[i] >= height[begin]) {
-          count += sum;
-          begin = i;
-          break;
-        } else {
-          sum += height[begin] - height[end];
-        }
-
-        if (i === height.length - 1) {
-          begin += 1;
-        }
+  while (leftPointer < rightPointer) {
+    if (height[leftPointer] < height[rightPointer]) {
+      if (height[leftPointer] > leftMax) {
+        leftMax = height[leftPointer];
+      } else {
+        count += leftMax - height[leftPointer];
       }
+
+      leftPointer += 1;
     } else {
-      begin += 1;
+      if (height[rightPointer] > rightMax) {
+        rightMax = height[rightPointer];
+      } else {
+        count += rightMax - height[rightPointer];
+      }
+      rightPointer -= 1;
     }
   }
 
