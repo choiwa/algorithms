@@ -1,3 +1,16 @@
+function fearNotLetter(str) {
+  for (let i = 0; i < str.length; i += 1) {
+    let code = str.charCodeAt(i); // the code at str index i
+
+    if (code !== str.charCodeAt(0) + i) {
+      //check the code in order
+      return String.fromCharCode(code - 1);
+    }
+  }
+  return undefined;
+}
+
+fearNotLetter("abce");
 // function fearNotLetter(str) {
 //     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
